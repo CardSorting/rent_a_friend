@@ -1,0 +1,27 @@
+<h1>How was your experience?</h1>
+
+<p>Hello <%= @user.full_name %>,</p>
+
+<p>We hope you had a great time with <%= @friend.user.full_name %>!</p>
+
+<div style="margin: 20px 0; padding: 20px; background-color: #f8f9fa; border-radius: 5px;">
+  <p><strong>Booking Details:</strong></p>
+  <p><strong>Date:</strong> <%= @booking.start_time.strftime("%B %d, %Y") %></p>
+  <p><strong>Time:</strong> <%= @booking.start_time.strftime("%I:%M %p") %> - <%= @booking.end_time.strftime("%I:%M %p") %></p>
+  <p><strong>Service Category:</strong> <%= @booking.service_category.name %></p>
+</div>
+
+<p>We'd love to hear about your experience! Your feedback helps us maintain high-quality service and helps other users make informed decisions.</p>
+
+<div style="margin: 20px 0;">
+  <a href="<%= root_url %>bookings/<%= @booking.id %>/feedback" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">
+    Share Your Feedback
+  </a>
+</div>
+
+<p>Your feedback will help <%= @friend.user.first_name %> improve their service and help other users make informed decisions.</p>
+
+<p>
+  Best regards,<br>
+  The Rent A Friend Team
+</p>

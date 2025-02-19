@@ -1,0 +1,31 @@
+<h1>Booking Reminder</h1>
+
+<p>Hello <%= @user.full_name %> and <%= @friend.user.full_name %>,</p>
+
+<p>This is a friendly reminder about your upcoming booking:</p>
+
+<div style="margin: 20px 0; padding: 20px; background-color: #f8f9fa; border-radius: 5px;">
+  <p><strong>Date:</strong> <%= @booking.start_time.strftime("%B %d, %Y") %></p>
+  <p><strong>Time:</strong> <%= @booking.start_time.strftime("%I:%M %p") %> - <%= @booking.end_time.strftime("%I:%M %p") %></p>
+  <p><strong>Duration:</strong> <%= @booking.duration %> hours</p>
+  <p><strong>Service Category:</strong> <%= @booking.service_category.name %></p>
+  <p><strong>Total Amount:</strong> <%= @booking.total_amount.format %></p>
+</div>
+
+<% if @booking.notes.present? %>
+  <p><strong>Additional Notes:</strong></p>
+  <p><%= @booking.notes %></p>
+<% end %>
+
+<p>Please ensure you're available at the scheduled time. If you need to cancel, please do so as soon as possible through the website.</p>
+
+<div style="margin: 20px 0;">
+  <a href="<%= root_url %>bookings/<%= @booking.id %>" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">
+    View Booking Details
+  </a>
+</div>
+
+<p>
+  Best regards,<br>
+  The Rent A Friend Team
+</p>

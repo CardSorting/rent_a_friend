@@ -1,0 +1,23 @@
+Booking Confirmed!
+
+Hello <%= @user.full_name %> and <%= @friend.user.full_name %>,
+
+Your booking has been confirmed with the following details:
+
+Date: <%= @booking.start_time.strftime("%B %d, %Y") %>
+Time: <%= @booking.start_time.strftime("%I:%M %p") %> - <%= @booking.end_time.strftime("%I:%M %p") %>
+Duration: <%= @booking.duration %> hours
+Service Category: <%= @booking.service_category.name %>
+Total Amount: <%= @booking.total_amount.format %>
+
+<% if @booking.notes.present? %>
+Additional Notes:
+<%= @booking.notes %>
+<% end %>
+
+You will receive a reminder 24 hours before the booking.
+
+If you need to cancel or modify this booking, please do so at least 24 hours in advance through the website.
+
+Best regards,
+The Rent A Friend Team

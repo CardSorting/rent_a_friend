@@ -1,0 +1,17 @@
+Booking Cancelled
+
+Hello <%= @user.full_name %> and <%= @friend.user.full_name %>,
+
+The following booking has been cancelled:
+
+Date: <%= @booking.start_time.strftime("%B %d, %Y") %>
+Time: <%= @booking.start_time.strftime("%I:%M %p") %> - <%= @booking.end_time.strftime("%I:%M %p") %>
+Duration: <%= @booking.duration %> hours
+Service Category: <%= @booking.service_category.name %>
+
+The time slot has been released and is now available for new bookings.
+
+If you'd like to schedule a new booking, please visit our website to see available time slots.
+
+Best regards,
+The Rent A Friend Team

@@ -1,0 +1,20 @@
+How was your experience?
+
+Hello <%= @user.full_name %>,
+
+We hope you had a great time with <%= @friend.user.full_name %>!
+
+Booking Details:
+Date: <%= @booking.start_time.strftime("%B %d, %Y") %>
+Time: <%= @booking.start_time.strftime("%I:%M %p") %> - <%= @booking.end_time.strftime("%I:%M %p") %>
+Service Category: <%= @booking.service_category.name %>
+
+We'd love to hear about your experience! Your feedback helps us maintain high-quality service and helps other users make informed decisions.
+
+To share your feedback, please visit:
+<%= root_url %>bookings/<%= @booking.id %>/feedback
+
+Your feedback will help <%= @friend.user.first_name %> improve their service and help other users make informed decisions.
+
+Best regards,
+The Rent A Friend Team

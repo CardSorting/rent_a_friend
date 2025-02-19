@@ -1,0 +1,24 @@
+Booking Reminder
+
+Hello <%= @user.full_name %> and <%= @friend.user.full_name %>,
+
+This is a friendly reminder about your upcoming booking:
+
+Date: <%= @booking.start_time.strftime("%B %d, %Y") %>
+Time: <%= @booking.start_time.strftime("%I:%M %p") %> - <%= @booking.end_time.strftime("%I:%M %p") %>
+Duration: <%= @booking.duration %> hours
+Service Category: <%= @booking.service_category.name %>
+Total Amount: <%= @booking.total_amount.format %>
+
+<% if @booking.notes.present? %>
+Additional Notes:
+<%= @booking.notes %>
+<% end %>
+
+Please ensure you're available at the scheduled time. If you need to cancel, please do so as soon as possible through the website.
+
+View Booking Details:
+<%= root_url %>bookings/<%= @booking.id %>
+
+Best regards,
+The Rent A Friend Team
